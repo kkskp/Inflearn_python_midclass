@@ -1,8 +1,8 @@
 # Chapter05-02
-'''
+"""
 일급 함수(일급 객체)
 클로저 기초
-'''
+"""
 
 # python의 변수 범위
 
@@ -25,7 +25,7 @@ def func_v2(a):
     print(b)
 
 
-print('Ex2')
+print("Ex2")
 func_v2(10)
 
 # Ex3
@@ -40,10 +40,10 @@ def func_v3(a):
     c = 40
 
 
-print('Ex3')
-print('>>', c)
+print("Ex3")
+print(">>", c)
 func_v3(10)
-print('>>>', c)
+print(">>>", c)
 
 # Closure(클로저) 사용 이유 -> 함수가 다 돌아도 안에 있는 변수를 기억해준다.
 # 서버 프로그래밍 -> 동시성(Concurrency) 제어 -> 메모리 공간에 여러 자원이 접근 -> 교착상태(Dead lock)
@@ -64,14 +64,13 @@ print(sum(range(51, 101)))
 # 클래스 이용
 
 
-class Averager():
-
+class Averager:
     def __init__(self):
         self._series = []
 
     def __call__(self, v):
         self._series.append(v)
-        print('inner >> {} / {}'.format(self._series, len(self._series)))
+        print("inner >> {} / {}".format(self._series, len(self._series)))
         return sum(self._series) / len(self._series)
 
 
@@ -82,3 +81,5 @@ averager_cls = Averager()
 print(averager_cls(10))
 print(averager_cls(30))
 print(averager_cls(50))
+
+
